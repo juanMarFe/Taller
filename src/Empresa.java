@@ -1,4 +1,3 @@
-
 public class Empresa {
 	private String name = "";
 	   private String password = "";

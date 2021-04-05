@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Single {
 	static private Single singleton = null;
 	private ArrayList<Oferta> ofertas;
+	private ArrayList<EmpresaComposite> empresas;
 	
 	
 	private Single() {
 
+		empresas = new ArrayList<EmpresaComposite>();
 		ofertas = new ArrayList<Oferta>();
 		
 	}
@@ -136,6 +138,97 @@ public class Single {
 			 EmpresaAdapter empresa = new EmpresaAdapter();
 			 empresa.D_Cuenta(A, B);
 		 }
+		 
+		 public void nuevaEmpresa(EmpresaComposite empresa) {
+				this.empresas.add(empresa);
+			}
+
+			public String verEmpresas() {
+				String temp = "Empresas: \n";
+				for (int i = 0; i < empresas.size(); i++) {
+					temp += empresas.get(i).datos() + "\n";
+				}
+				return temp;
+
+			}
+
+			public EmpresaComposite buscarEmpresa(String nit) {
+				try {
+					EmpresaComposite temp = new EmpresaComposite("-1", "", "", " ");
+					;
+					for (int i = 0; i < empresas.size(); i++) {
+						if (empresas.get(i).datos().startsWith("El NIT es: " + nit)) {
+							temp = empresas.get(i);
+						}
+					}
+
+					if (temp.datos().startsWith("-1")) {
+						return null;
+					} else {
+						return temp;
+					}
+				} catch (Exception e) {
+					System.out.println(e);
+
+					return null;
+				}
+			}
+
+			public boolean borrarEmpresa(String nit) {
+				try {
+					boolean i= false;
+					EmpresaComposite temp=buscarEmpresa(nit);
+					
+					if(temp!=null) {
+						for (int j = 0; j < empresas.size(); j++) {
+							if (empresas.get(j)==temp) {
+								empresas.remove(j);
+								i=true;
+							}
+						}
+					}
+					
+					return i;
+				} catch (Exception e) {
+					System.out.println(e);
+					return false;
+				}
+			}
+			
+			
+			public boolean updateEmpresas(EmpresaComposite nuevo, String nitCambiar) {
+				
+				try {
+					if(buscarEmpresa(nitCambiar)!=null) {
+		                            borrarEmpresa(nitCambiar);
+		                            nuevaEmpresa(nuevo);
+		                            return true;
+					}else {
+		                            return false;
+					}
+				} catch (Exception e) {
+					
+					return false;
+				}
+				
+			}
+		        
+		        public boolean ingresar(EmpresaComposite empresa){
+		            String nit=empresa.getNit();
+		            String contra = empresa.getContrasena();
+		            boolean ingresar=false;
+		            for (int i = 0; i < empresas.size(); i++) {
+		                if ((empresas.get(i).datos().startsWith("El NIT es: " + nit))&& (empresas.get(i).getContrasena().equals(contra))) {
+		                    ingresar = true;
+		                    break;
+		                }
+		                else
+		                {
+		                    ingresar = false;
+		                }
+		        }
+		         return ingresar;
+		}
 		 
 
 }

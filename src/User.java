@@ -1,4 +1,3 @@
-
 public abstract class User {
 	 abstract public String get_login();
 	 abstract public void C_Cuenta(String A, String B);
@@ -9,3 +8,4 @@ public abstract class User {
 	 abstract public void U_Cuenta(String A, String B, String NA, String NB);
 	 abstract public void R_Cuenta(String Uname);
 }
+
