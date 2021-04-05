@@ -1,24 +1,24 @@
 
-public class Empresa {
+public class Cuenta extends User{
 	private String name = "";
 	   private String password = "";
 	   private boolean acceso=false;
 	   
 	   
-	   public String Diferente1(){
+	   public String get_login(){
 	return this.name;
 	  }
-	public void Diferente2(String Uname, String Upassword){
+	public void C_Cuenta(String Uname, String Upassword){
 	this.name = Uname;
 	this.password = Upassword;
 	
 	}
-	public String Diferente3(){
+	public String get_password(){
 	return this.password;
 	}
-	public boolean Diferente4(String Uname1, String Upassword1){
+	public boolean ingresar(String Uname1, String Upassword1){
 	if (Uname1==this.name && Upassword1==this.password){
-	  System.out.println("Los datos son correctos, bienvenido "+ Diferente5());
+	  System.out.println("Los datos son correctos, bienvenido");
 	  this.acceso=true;
 	  return this.acceso;
 	}
@@ -27,11 +27,11 @@ public class Empresa {
 		return this.acceso;
 	}
 	}
-	public String Diferente5(){
+	public String gettipoUsuario(){
 	   return "empleado";
 	   
 	  }
-	public void Diferente6(String Uname1, String Upassword1) {
+	public void D_Cuenta(String Uname1, String Upassword1) {
 		if (Uname1==this.name && Upassword1==this.password){
 			  System.out.println("La verificación ha sido correcta, la cuenta ha sido eliminada");
 			  this.name=null;
@@ -42,7 +42,7 @@ public class Empresa {
 				
 			}
 	}
-	 public void Diferente7(String Uname1, String Upassword1, String NUname1, String NUpassword1) {
+	 public void U_Cuenta(String Uname1, String Upassword1, String NUname1, String NUpassword1) {
 		 if (Uname1==this.name && Upassword1==this.password){
 			  System.out.println("La verificación ha sido correcta, la cuenta ha sido actualizada");
 			  this.name=NUname1;
@@ -53,12 +53,12 @@ public class Empresa {
 				
 			}
 	 }
-	 public void Diferente8(String Uname1) {
+	 public void R_Cuenta(String Uname1) {
 		 if(this.name==Uname1) {
-			 System.out.println("Los datos de la cuenta son: "+ this.name +"/n"+ this.password);
+		 System.out.println("Los datos de la cuenta son: "+ this.name +"/n"+ this.password);
+	 }
+		 else {
+			 System.out.println("Esa cuenta no existe");
 		 }
-			 else {
-				 System.out.println("Esa cuenta no existe");
-			 }
-	}
-	}
+}
+}

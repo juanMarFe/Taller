@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Single {
 	static private Single singleton = null;
 	private ArrayList<Oferta> ofertas;
-
+	
+	
 	private Single() {
+
 		ofertas = new ArrayList<Oferta>();
+		
 	}
 
 	public static Single crearInstaSingleton() {
@@ -88,8 +91,51 @@ public class Single {
 			
 			return false;
 		}
-		
 	}
 	
-	// test
+	
+	// ADAPTER
+	//CRUD CUENTA
+		
+		
+		 public void C_Cuenta(String A, String B) {
+			 Cuenta cuenta = new Cuenta();
+			 cuenta.C_Cuenta(A, B);
+		 }
+		 public void R_Cuenta(String Uname) {
+			 Cuenta cuenta = new Cuenta();
+			 cuenta.R_Cuenta(Uname);
+		 }
+		 public void U_Cuenta(String A, String B, String NA, String NB) {
+			 Cuenta cuenta = new Cuenta();
+			 cuenta.U_Cuenta(A, B, NA, NB);
+		 }
+		 public void D_Cuenta(String A, String B) {
+			 Cuenta cuenta = new Cuenta();
+			 cuenta.D_Cuenta(A, B);
+		 }
+		 public boolean ingresar(String A, String B) {
+			 Cuenta cuenta = new Cuenta();
+			return cuenta.ingresar(A, B);
+		 }
+
+		 //CRUD EMPRESA
+		 public void C_Empresa(String A, String B) {
+			 EmpresaAdapter empresa = new EmpresaAdapter();
+			 empresa.C_Cuenta(A, B);
+		 }
+		 public void R_Empresa(String Uname) {
+			 EmpresaAdapter empresa = new EmpresaAdapter();
+			 empresa.R_Cuenta(Uname);
+		 }
+		 public void U_Empresa(String A, String B, String NA, String NB) {
+			 EmpresaAdapter empresa = new EmpresaAdapter();
+			 empresa.U_Cuenta(A, B, NA, NB);
+		 }
+		 public void D_Empresa(String A, String B) {
+			 EmpresaAdapter empresa = new EmpresaAdapter();
+			 empresa.D_Cuenta(A, B);
+		 }
+		 
+
 }
