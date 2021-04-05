@@ -1,8 +1,11 @@
 import javax.swing.JOptionPane;
 
 public class Main {
-
+	
+	
 	public static void main(String[] args) {
+		Main principal= new Main();
+		principal.interfaz();
 
 	}
 
@@ -85,6 +88,9 @@ public class Main {
 			}
 		}
 		while(valorMenPrincipal!=0);
-		}   
+		}
+
+	public Main() {
+	}   
 
 }
