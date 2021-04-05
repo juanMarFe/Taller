@@ -17,6 +17,7 @@ public class Main {
 	
 			valorMenPrincipal = Integer.parseInt(JOptionPane.showInputDialog("1. personas \n"
 					+ "2. empresa\n"
+					+ "3. oferta\n"
 					+ "0. Salir"));
 			switch (valorMenPrincipal) {
 				case 1:
@@ -83,6 +84,43 @@ public class Main {
 					while(valorEmpresas!=0);
 					break;
 				}
+				case 3:
+					 {
+
+						do{        
+
+							int valorOfertas = Integer.parseInt(JOptionPane.showInputDialog("1.Crear una oferta nueva \n"
+									+ "2. ver ofertas\n"
+									+ "3. modificar oferta\n"
+									+ "0. Salir"));
+							switch (valorOfertas) {
+								case 1:
+									{
+										String codigoNuv = JOptionPane.showInputDialog("Por favor ingrese el codigo");
+										String descripcionNuv = JOptionPane.showInputDialog("Por favor ingrese una descripcion");
+										String tipoNuv = JOptionPane.showInputDialog("Por favor ingrese el tipo de contrato");
+										String tiempoNuv = JOptionPane.showInputDialog("Por favor ingrese el tiempo del contrato");
+										Oferta nuvOfrt = new OfertaSingle(Integer.parseInt(codigoNuv), descripcionNuv, tipoNuv, tiempoNuv); 
+										
+										
+										break;
+									}
+								case 2:
+									
+				
+									break;
+								case 3: 
+								String codigoBusc = JOptionPane.showInputDialog("Por favor ingrese el codigo de la oferta a modificar");
+	
+									break;
+								default:
+									break;
+							}
+						}
+						while(valorEmpresas!=0);
+					 }
+
+				break;
 				default:
 					break;
 			}
