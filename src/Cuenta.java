@@ -2,6 +2,7 @@
 public class Cuenta extends User{
 	private String name = "";
 	   private String password = "";
+	   
 	   private boolean acceso=false;
 	   
 	   

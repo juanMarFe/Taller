@@ -22,7 +22,7 @@ public class Main {
 	
 	private void interfaz() {
 		Single sing;
-		sing = s.crearInstaSingleton();
+		sing = Single.crearInstaSingleton();
 		int valorMenPrincipal = -10;
 		int valorPersonas = -10;
 		int valorEmpresas = -10;
