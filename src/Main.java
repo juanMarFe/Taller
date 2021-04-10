@@ -31,6 +31,7 @@ public class Main {
 			valorMenPrincipal = Integer.parseInt(JOptionPane.showInputDialog("1. personas \n"
 					+ "2. empresa\n"
 					+ "3. oferta\n"
+					+ "3. usuario\n"
 					+ "0. Salir"));
 			switch (valorMenPrincipal) {
 				case 1:
